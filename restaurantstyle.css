@@ -1,0 +1,255 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background:#362417;
+	font-family: Gabriela;
+}
+#main-container{
+	width: 98%;
+	margin: 0 auto;
+	background: #f1dabf;
+}
+#header-container{
+	background:  #92817a;
+	width: 100%;
+	height: 104px;
+}
+#logo{
+	width: 100px;
+	height: 100px;
+	display: block;
+	float: left;
+	display: inline-block;
+	margin-left: 15px;
+	border: 2px solid #f1dabf;
+	border-radius: 50%;
+}
+#nav-container{
+	float: right;
+}
+#nav-container ul{
+	display: inline-block;
+	list-style-type: none;
+}
+#nav-container ul li{
+	display: inline-block;
+	margin: 38px 15px;
+	width: 150px;
+}
+#nav-container ul li a{
+	text-decoration: none;
+	font-size: 26px;
+	color: #f1dabf;
+}
+#nav-container a:hover{
+	color: #dbc6ad;
+	border-bottom: 2px solid #dbc6ad;
+}
+#section-container{
+	width: 80%;
+	float: right;
+	background: #f1dabf;
+	height:75vh;
+}
+#article-invitation{
+	display: inline-block;
+	width: 49%;
+	float: left;
+}
+#article-image{
+	width: 100%;
+	height: 75vh;
+	background-image: url('images/front.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;	
+	margin-top: 17px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+#article-invitation h1{
+	font-size: 44px;
+	color:  #fffbff;
+	text-align: center;
+	text-shadow: 2px 2px 8px #04030f;
+}
+
+#article-invitation h2{
+	margin-top: 20px;
+	font-size: 42px;
+	color:  #fffbff;
+	text-align: center;
+	text-shadow: 2px 2px  8px #04030f;
+	line-height: 62px;
+}
+#article-invitation p{
+	font-size: 18px;
+	color: #fffbff;
+	text-align: center;
+	text-shadow: 2px 2px  8px #04030f;
+	line-height: 62px;
+}
+#article-information{
+	display: inline-block;
+	width: 49%;
+	float: right;
+}
+#video{
+	margin: 60px auto;
+	text-align: center;
+	justify-content: center;
+}
+#article-information h2{
+	text-align: center;
+	color: #04030f;
+	text-shadow: 2px 2px #92817a;
+}
+#article-information video{
+	width: 90%;
+	height: auto;
+}
+#aside-container{
+	background:  #f1dabf;
+	width: 19.5%;
+	height: 75vh;
+	float: left;
+}
+#aside-text{
+	padding: 10px;
+    line-height: 29px;
+	text-align: justify;
+	color:#04030f;
+	text-shadow: 1px 1px #92817a;
+}
+#aside-text h1{
+	font-size: 32px;
+	text-align: center;
+	text-shadow: 2px 2px #92817a;
+}
+#footer-container{
+	float: left;
+	background: #92817a;
+	width: 100%;
+	margin-top: 5px;
+}
+#footer-container img{
+	height: 50px;
+	width: 50px;
+	margin: 10px 40px;
+}
+#footer-container p{
+	font-size: 24px;
+	text-align: center;
+	line-height: 70px;
+	color: #04030f;
+}
+#footer-container span{
+	color: #f1dabf;
+	text-shadow: 2px 2px #04030f;
+}	
+
+@media (max-width: 1024px){
+	#article-invitation h1 {
+    	font-size: 48px;
+	}
+	#article-invitation h2{
+    	font-size: 30px;
+	}
+	#article-invitation p{
+    	font-size: 15px;
+	}
+	#aside-text{
+		padding: 5px;
+		line-height: 21px;
+	}
+	#aside-text h1 {
+    	font-size: 27px;
+	}
+	#video{
+		margin: 120px auto;
+	}
+	#footer-container p{
+		font-size: 14px;
+	}
+}
+
+@media (max-width: 768px){
+	#main-container{
+		width: 100%;
+	}
+	#nav-container ul li{
+		margin: 38px 0px;
+	}
+	#section-container{
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	#article-invitation{
+		display: block;
+		width: 100%;
+	}
+	#article-information{
+		display: block;
+		width: 100%;
+	}
+	#aside-container{
+		display: block;
+		width: 100%;
+		height: auto;
+		border-top: 5px solid #362417;
+	}
+	#footer-container p {
+	    font-size: 14px;
+	    line-height: 36px;
+	}
+}
+@media (max-width: 578px){
+	#header-container{
+		height: 210px;
+	}
+}
+@media (max-width: 480px){
+	#header-container img{
+		text-align: center;
+		display: block;
+		float: none;
+		margin: 0 auto;
+		border-radius: 0px;
+		padding: 0px 30px;
+		border-radius: 25px;
+	}
+	#nav-container{
+		float: left;
+		background: #92817a;
+		width: 100%
+	}
+	#nav-container ul{
+		display:block;
+	}
+	#nav-container ul li{
+		display:block;
+		width: 99%;
+		text-align: center;
+		border: 2px solid #f1dabf;
+		margin: 5px 0px;
+		padding: 20px 0px;
+
+	}
+	#section-container{
+		height: auto;
+	}
+	#aside-container{
+		height: auto;
+	}
+	#footer-container img{
+		margin: 10px 0px;
+	}
+	#footer-container p{
+		font-size: 15px;
+		line-height: 35px;
+	}
+}

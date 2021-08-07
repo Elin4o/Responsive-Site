@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Козаревско Ханче</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/PageLogo.png" type="image/icon type">
+	<html lang="bg">
+	<link rel="stylesheet" type="text/css" href="order.css">
+	<link href='https://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet'>
+	<meta name="author" content="Elin Nikolov">
+</head>
+<body>
+	<main id="main-container">
+		<header id="header-container">
+			<a href="MainPage.html">
+				<img src="images/HancheLogo.png" alt="Kozarevsko Hanche Logo" id="logo">
+			</a>			
+			<nav id="nav-container">
+				<ul>
+					<li>
+						<a href="MainPage.html">Ханчето</a>
+					</li>
+					<li>
+						<a href="MenuPage.html">Меню</a>
+					</li>
+					<li>
+						<a href="OrderPage.html">Поръчки</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<section id="menu-container">
+			<article id="order-menu">
+				<div class="col-order">
+	                <form id="orderForm" action="form.php" method="POST" name="regForm">
+	                    <div class="row">
+	                        <input id="firstName" type="text" name="firstName" placeholder="Вашето име" >
+	                    </div>
+	                    <div class="row">
+	                        <input id="lastName" type="text" name="lastName" placeholder="Вашата фамилия" ж>
+	                    </div>
+	                    <div class="row">
+	                        <input id="email" type="text" name="email" placeholder="Имейл">
+	                    </div>
+	                    <div class="row">
+	                        <input id="phone" type="text" name="phone" placeholder="Телефонен номер (088-888-8888 )" >
+	                    </div>
+	                     <div class="row">
+	                        <input id="password" type="password" name="pass" placeholder="Код за потвърждаване/парола" >
+	                    </div>
+	                    <div class="row form-info-row">
+	                        <p class="form-info">Дата и час на доставката:</p>
+	                    </div>
+	                    <div class="row">
+	                        <div class="col first-col">
+	                            <input id="date" type="date" name="date" placeholder="Date" >
+	                        </div>
+	                        <div class="col last-col">
+	                            <input id="time" type="time" name="time" placeholder="Time" >
+	                        </div>
+	                    </div>
+	                    <div class="row addinfo">
+	                        <p class="form-info">Коментар за доставката:</p>
+	                    </div>
+	                    <div class="row">
+	                        <textarea id="additionalInfo"></textarea>
+	                    </div>
+	                    <div class="row">
+	                        <button type="submit" class="form-button" onclick="return Validate()">Изпращане на поръчката</button>
+	                    </div>
+	                </form>
+	                <p id="errors"></p>
+            	</div>
+			</article>
+			<article id="location">
+				<div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+				<div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
+		        var setting = {"height":400,"width":500,"zoom":17,"queryString":"5007 119, 8890 Kozarevo Lozyata, Tvarditsa, Bulgaria","place_id":"EjQ1MDA3IDExOSwgODg5MCBLb3phcmV2byBMb3p5YXRhLCBUdmFyZGl0c2EsIEJ1bGdhcmlhIjASLgoUChIJRbhdzBmNqEARfHdYBHMFqYsQdyoUChIJCf2eamT1qEAR7y9-qg0ipbo","satellite":true,"centerCoord":[42.69912614905407,25.870058937933706],"cid":"0x4a95e3bca6b6822b","lang":"en","cityUrl":"/bulgaria/stara-zagora-11315","cityAnchorText":"Map of Stara Zagora, Stara Zagora Province, Bulgaria","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"211844"};
+		        var d = document;
+		        var s = d.createElement('script');
+		        s.src = 'https://1map.com/js/script-for-user.js?embed_id=211844';
+		        s.async = true;
+		        s.onload = function (e) {
+		          window.OneMap.initMap(setting)
+		        };
+		        var to = d.getElementsByTagName('script')[0];
+		        to.parentNode.insertBefore(s, to);
+		     	 })();</script><a href="https://1map.com/map-embed">1 Map</a>
+		  </div>
+			</article>
+		</section>
+		<footer id="footer-container">
+			<a href="MainPage.html">
+				<img src="images/HancheLogo.png" alt="Kozarevsko Hanche Logo" id="logo">
+			</a>
+			<p>Сайтът е създаден  от <span>Елин Николов</span> като курсов проект към ПУ "Паисий Хилендарски"</p>	
+		</footer>
+	</main>
+	<script>
+		function Validate(){
+			var errors = "";
+			var firstName =  document.getElementById('firstName').value;
+			var lastName = document.getElementById('lastName').value;
+			var password =  document.getElementById('password').value;
+			var email =  document.getElementById('email').value;
+
+			if (firstName ==  ''  || firstName.length < 3) {
+				errors += "Името е грешно!";
+				document.getElementById('errors').innerHTML = errors;
+				return false;
+			}
+			if (firstName.match(/[0-9]/g)) {
+				errors += "Името не съдържа цифри!";
+				document.getElementById('errors').innerHTML = errors;
+				return false;
+			}
+			if (lastName ==  ''  || lastName.length < 3) {
+				errors += "Фамилията е грешна!";
+				document.getElementById('errors').innerHTML = errors;
+				return false;
+			}
+			if (lastName.match(/[0-9]/g)) {
+				errors += "Фамилията не съдържа цифри!";
+				document.getElementById('errors').innerHTML = errors;
+				return false;
+			}
+			if (password ==  ''  || password.length < 3) {
+				errors += "Кодът не е правилен";
+				document.getElementById('errors').innerHTML = errors;
+				return false;
+			}
+			if (!password.match(/[0-9]/g)) {
+				errors += "Кодът трябва да съдържа поне една цифра!";
+				document.getElementById('errors').innerHTML = errors;
+				return false;
+			}
+			if (!password.match(/[A-Z]/g)) {
+				errors += "Кодът трябва да съдържа поне една голяма буква!";
+				document.getElementById('errors').innerHTML = errors;
+				return false;
+			}
+			if (email == '' || email.length < 3) {
+				errors += "Имейлът не е правилен!";
+				document.getElementById('errors').innerHTML = errors;
+				return false
+			}
+			if (email.indexOf('@') == -1 || email.indexOf('.') == -1) {
+				errors += "Имейлът не е правилен!";
+				document.getElementById('errors').innerHTML = errors;
+				return false;
+			}
+
+			document.getElementById('errors').innerHTML = errors;
+		}
+	</script>
+</body>
+</html>
